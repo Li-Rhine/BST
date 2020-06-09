@@ -214,4 +214,20 @@ public class BST<E extends Comparable<E>> {
     }
 
 
+    // 二分搜索树的后续遍历
+    public void postOrder() {
+        postOrder(root);
+    }
+
+    // 后续遍历以node为根的二分搜索树，递归算法
+    private void postOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.e);
+    }
+
+
 }
