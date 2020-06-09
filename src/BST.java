@@ -195,4 +195,23 @@ public class BST<E extends Comparable<E>> {
             return successor;
         }
     }
+
+
+    // 二分搜索树的中序遍历
+    public void inOrder() {
+        inOrder(root);
+    }
+
+    // 中序遍历以node为根的二分搜索树，递归算法
+    // * 二分搜索树的中序遍历就是二分搜索树的排序结果，---也叫排序树
+    private void inOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.left);
+        System.out.println(node.e);
+        inOrder(node.right);
+    }
+
+
 }
